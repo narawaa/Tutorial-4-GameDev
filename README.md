@@ -7,4 +7,4 @@ Pada level ini rintangan yang sebelumnya berupa ikan diganti menjadi objek tikus
 
 Saya juga menambahkan fitur double jump pada Player sehingga Player dapat melakukan dua kali lompatan sebelum kembali menyentuh tanah. Fitur ini membantu Player untuk melewati rintangan yang ada di level.
 
-Referensi yang digunakan berasal dari dokumentasi resmi Godot Engine mengenai TileMap, Parallax2D, dan CharacterBody2D serta materi praktikum yang telah diberikan sebelumnya.
+Referensi yang digunakan berasal dari dokumentasi resmi Godot Engine mengenai TileMap, Parallax2D, dan CharacterBody2D serta tutorial yang telah diberikan sebelumnya.
