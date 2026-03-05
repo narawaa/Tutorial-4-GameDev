@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b118pvmscylk6"]
+
+[ext_resource type="Script" uid="uid://xer3a5s10o44" path="res://scenes/LoseConditionFish.gd" id="1_o72ex"]
+[ext_resource type="PackedScene" uid="uid://ch1pc1s0qdwgo" path="res://scenes/Area2D.tscn" id="2_63e2e"]
+[ext_resource type="Texture2D" uid="uid://bivk5n8i3vnqc" path="res://assets/kenney_platformerpack/PNG/Enemies/fishBlue.png" id="2_gccpt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_63e2e"]
+radius = 35.0
+height = 110.0
+
+[node name="FallingFish" type="RigidBody2D" unique_id=492694172]
+
+[node name="Area2d" parent="." unique_id=673148074 instance=ExtResource("2_63e2e")]
+scale = Vector2(1.7, 1.7)
+script = ExtResource("1_o72ex")
+sceneName = "LoseScreen"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1405764464]
+rotation = 3.1415927
+texture = ExtResource("2_gccpt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1115765831]
+shape = SubResource("CapsuleShape2D_63e2e")

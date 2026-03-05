@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c065i5b2wiy44"]
+
+[ext_resource type="PackedScene" uid="uid://ch1pc1s0qdwgo" path="res://scenes/Area2D.tscn" id="1_80a26"]
+[ext_resource type="Script" uid="uid://xer3a5s10o44" path="res://scenes/LoseConditionFish.gd" id="2_kuuk3"]
+[ext_resource type="Texture2D" uid="uid://5crq6bolbut8" path="res://assets/kenney_platformerpack/PNG/Enemies/mouse.png" id="3_80a26"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_63e2e"]
+radius = 16.0
+height = 58.0
+
+[node name="FallingMouse" type="RigidBody2D" unique_id=492694172]
+
+[node name="Area2d" parent="." unique_id=673148074 instance=ExtResource("1_80a26")]
+position = Vector2(-2.8, -5)
+scale = Vector2(0.69, 0.8)
+script = ExtResource("2_kuuk3")
+sceneName = "LoseScreen"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1405764464]
+position = Vector2(-19, -6)
+rotation = 4.712389
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_80a26")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1115765831]
+position = Vector2(-3, -4)
+shape = SubResource("CapsuleShape2D_63e2e")

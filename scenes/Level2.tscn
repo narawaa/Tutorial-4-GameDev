@@ -1,0 +1,101 @@
+[gd_scene format=4 uid="uid://dyg3yqhjwuwxo"]
+
+[ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1_qwp14"]
+[ext_resource type="Texture2D" uid="uid://cluh2ekc38ktx" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_dirt.png" id="2_xpq2v"]
+[ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="3_0jmjk"]
+[ext_resource type="PackedScene" uid="uid://ch1pc1s0qdwgo" path="res://scenes/Area2D.tscn" id="4_v8268"]
+[ext_resource type="Script" uid="uid://pun6q4uppv45" path="res://scenes/WinCondition.gd" id="5_rcugv"]
+[ext_resource type="Script" uid="uid://bm4rfm2jkrx0n" path="res://scenes/Spawner.gd" id="6_3aekd"]
+[ext_resource type="Script" uid="uid://b7sxmljfu5cfc" path="res://scenes/LoseConditionLevel2.gd" id="6_xpq2v"]
+[ext_resource type="PackedScene" uid="uid://c065i5b2wiy44" path="res://scenes/FallingMouse.tscn" id="7_qwp14"]
+[ext_resource type="Texture2D" uid="uid://b3p8a5k0kouax" path="res://assets/background.jpg" id="9_0jmjk"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_odhdn"]
+texture = ExtResource("2_xpq2v")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, 64, 64, 7.220009, 53.33979, -29.779991, 37.33979, -53.77999, 7.8397903)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -12.16021, 45.72001, 26.33979, 5.720009, 50.83979, -64, 64, -64, 64, -64, 64)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -11.571999, 13.243782, -64, -20.856224)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -20.856224, 15.377998, 9.943779, -64, 64)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 4.9937744, 1.628006, 5.5437775, -64, 2.7937775)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 4.9937744, 1.628006, 5.5437775, -64, 2.7937775)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 4.9937744, 1.628006, 5.5437775, -64, 2.7937775)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 4.9937744, 1.628006, 5.5437775, -64, 2.7937775)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, -2.7719955, -0.5062256, 64, 64, -3.3219986, 64, -64, 64)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(6.590225, -6.4842834, 64, -64, 64, 64, 64, 64, -64, 64)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_dw26h"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_odhdn")
+
+[node name="Level2" type="Node2D" unique_id=1376533396]
+
+[node name="Player" parent="." unique_id=374242096 instance=ExtResource("1_qwp14")]
+position = Vector2(445, 209)
+collision_layer = 3
+collision_mask = 3
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1095148178]
+position = Vector2(0, 200)
+scale = Vector2(0.7, 0.7)
+tile_map_data = PackedByteArray("AAAEAAMAAAAHAAAAAAAAAAIAAAAHAAEAAAABAAIAAAAHAAEAAAACAAIAAAAHAAEAAAADAAIAAAAHAAEAAAAEAAIAAAAEAAEAAAAHAAQAAAAHAAEAAAAIAAQAAAAIAAEAAAADAAMAAAABAAAAAAACAAMAAAABAAAAAAABAAMAAAABAAAAAAAAAAMAAAABAAAAAAAAAAQAAAABAAAAAAABAAQAAAABAAAAAAACAAQAAAABAAAAAAADAAQAAAABAAAAAAAEAAQAAAABAAAAAAAGAAQAAAAGAAEAAAAKAAIAAAADAAAAAAALAAIAAAAHAAEAAAAMAAIAAAAHAAEAAAANAAIAAAAEAAAAAAAPAAQAAAAFAAAAAAAQAAQAAAAHAAEAAAARAAMAAAAFAAEAAAARAAQAAAAIAAAAAAASAAMAAAAHAAEAAAATAAIAAAAFAAEAAAAUAAEAAAAFAAEAAAAVAAAAAAAFAAEAAAATAAMAAAAIAAAAAAAUAAIAAAAIAAAAAAAVAAEAAAAIAAAAAAASAAQAAAABAAAAAAATAAQAAAABAAAAAAAUAAQAAAABAAAAAAAUAAMAAAABAAAAAAAVAAIAAAABAAAAAAAVAAMAAAABAAAAAAAVAAQAAAABAAAAAAAWAAAAAAACAAEAAAAXAAAAAAACAAEAAAAYAAAAAAADAAEAAAAbAAQAAAAHAAEAAAAaAAQAAAACAAEAAAAZAAQAAAACAAEAAAAYAAQAAAACAAEAAAAXAAQAAAABAAEAAAAcAAQAAAABAAAAAAAdAAQAAAABAAAAAAAdAAMAAAABAAAAAAAdAAIAAAABAAAAAAAdAAEAAAABAAAAAAAdAAAAAAAHAAEAAAAcAAAAAAAHAAEAAAAbAAAAAAAGAAEAAAAcAAEAAAABAAAAAAAcAAIAAAABAAAAAAAcAAMAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_dw26h")
+
+[node name="AreaTrigger" type="Sprite2D" parent="." unique_id=951933180]
+z_index = -2
+position = Vector2(2129, 475.00003)
+scale = Vector2(0.34759146, 0.34759143)
+texture = ExtResource("3_0jmjk")
+
+[node name="Area2d" parent="AreaTrigger" unique_id=673148074 instance=ExtResource("4_v8268")]
+position = Vector2(-2.8774414, -6.1035156e-05)
+scale = Vector2(6, 7.3)
+script = ExtResource("5_rcugv")
+sceneName = "WinScreen"
+
+[node name="Area2d2" parent="AreaTrigger" unique_id=1313602840 instance=ExtResource("4_v8268")]
+position = Vector2(-2789.142, 531.436)
+scale = Vector2(250, 1)
+script = ExtResource("6_xpq2v")
+sceneName = "Level2"
+
+[node name="Spawner" type="Node2D" parent="." unique_id=1243758510]
+position = Vector2(820, -645)
+script = ExtResource("6_3aekd")
+obstacle = ExtResource("7_qwp14")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=552435045]
+scroll_scale = Vector2(0.05, 0.05)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1569082393]
+z_index = -10
+position = Vector2(1198, 277.00003)
+scale = Vector2(0.30129948, 0.3012995)
+texture = ExtResource("9_0jmjk")
