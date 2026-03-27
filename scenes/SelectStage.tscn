@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bvjpreiwsok05"]
+
+[ext_resource type="FontFile" uid="uid://cq2eovu76htms" path="res://assets/Fonts/CC Wild Words Roman.ttf" id="1_q53yw"]
+[ext_resource type="Script" uid="uid://bxmnsbbk2e44x" path="res://script/LinkButton.gd" id="2_kujvv"]
+
+[node name="SelectStage" type="VBoxContainer" unique_id=1749936433]
+offset_left = 528.0
+offset_top = 253.0
+offset_right = 659.0
+offset_bottom = 409.0
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="LinkButton" type="LinkButton" parent="." unique_id=1882522114]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_q53yw")
+theme_override_font_sizes/font_size = 32
+text = "Level 1"
+script = ExtResource("2_kujvv")
+scene_to_load = "Level1"
+
+[node name="LinkButton2" type="LinkButton" parent="." unique_id=800713942]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_q53yw")
+theme_override_font_sizes/font_size = 32
+text = "Level 2"
+script = ExtResource("2_kujvv")
+scene_to_load = "Level2"
+
+[node name="LinkButton3" type="LinkButton" parent="." unique_id=1367805285]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_q53yw")
+theme_override_font_sizes/font_size = 32
+text = "Back"
+script = ExtResource("2_kujvv")
+scene_to_load = "MainMenu"
+
+[connection signal="pressed" from="LinkButton" to="LinkButton" method="_on_pressed"]
+[connection signal="pressed" from="LinkButton2" to="LinkButton2" method="_on_pressed"]
+[connection signal="pressed" from="LinkButton3" to="LinkButton3" method="_on_back_pressed"]

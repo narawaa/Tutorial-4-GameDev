@@ -4,10 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://cluh2ekc38ktx" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_dirt.png" id="2_bwv4p"]
 [ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="3_dw26h"]
 [ext_resource type="PackedScene" uid="uid://ch1pc1s0qdwgo" path="res://scenes/Area2D.tscn" id="4_lrl65"]
-[ext_resource type="Script" uid="uid://pun6q4uppv45" path="res://scenes/WinCondition.gd" id="5_lrl65"]
-[ext_resource type="Script" uid="uid://bm4rfm2jkrx0n" path="res://scenes/Spawner.gd" id="6_76388"]
+[ext_resource type="Script" uid="uid://pun6q4uppv45" path="res://script/WinCondition.gd" id="5_ecr63"]
+[ext_resource type="Script" uid="uid://bm4rfm2jkrx0n" path="res://script/Spawner.gd" id="6_76388"]
 [ext_resource type="PackedScene" uid="uid://b118pvmscylk6" path="res://scenes/FallingFish.tscn" id="7_svatc"]
 [ext_resource type="Texture2D" uid="uid://b3p8a5k0kouax" path="res://assets/background.jpg" id="8_ecr63"]
+[ext_resource type="PackedScene" uid="uid://751ou282p0pr" path="res://scenes/LifeCounter.tscn" id="9_n34uq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_odhdn"]
 texture = ExtResource("2_bwv4p")
@@ -76,7 +77,7 @@ texture = ExtResource("3_dw26h")
 [node name="Area2d" parent="AreaTrigger" unique_id=673148074 instance=ExtResource("4_lrl65")]
 position = Vector2(-2.8774414, -6.1035156e-05)
 scale = Vector2(6, 7.3)
-script = ExtResource("5_lrl65")
+script = ExtResource("5_ecr63")
 sceneName = "Level2"
 
 [node name="Area2d2" parent="AreaTrigger" unique_id=1313602840 instance=ExtResource("4_lrl65")]
@@ -96,3 +97,7 @@ z_index = -10
 position = Vector2(1198, 277.00003)
 scale = Vector2(0.30129948, 0.3012995)
 texture = ExtResource("8_ecr63")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1414911102]
+
+[node name="LifeCounter" parent="CanvasLayer" unique_id=310879752 instance=ExtResource("9_n34uq")]

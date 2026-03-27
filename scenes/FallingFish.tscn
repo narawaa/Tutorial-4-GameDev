@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b118pvmscylk6"]
 
-[ext_resource type="Script" uid="uid://xer3a5s10o44" path="res://scenes/LoseConditionFish.gd" id="1_o72ex"]
+[ext_resource type="Script" uid="uid://xer3a5s10o44" path="res://script/LoseConditionFish.gd" id="1_o72ex"]
 [ext_resource type="PackedScene" uid="uid://ch1pc1s0qdwgo" path="res://scenes/Area2D.tscn" id="2_63e2e"]
 [ext_resource type="Texture2D" uid="uid://bivk5n8i3vnqc" path="res://assets/kenney_platformerpack/PNG/Enemies/fishBlue.png" id="2_gccpt"]
 

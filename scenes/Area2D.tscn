@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ch1pc1s0qdwgo"]
 
-[ext_resource type="Script" uid="uid://de4b822cn86b5" path="res://scenes/LoseCondition.gd" id="1_iuiid"]
+[ext_resource type="Script" uid="uid://de4b822cn86b5" path="res://script/LoseCondition.gd" id="1_iuiid"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55p2h"]
 size = Vector2(47, 65.5)

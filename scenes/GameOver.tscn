@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://ceqpn0eg7xixr"]
+
+[ext_resource type="FontFile" uid="uid://cq2eovu76htms" path="res://assets/Fonts/CC Wild Words Roman.ttf" id="1_6bcno"]
+[ext_resource type="Script" uid="uid://bxmnsbbk2e44x" path="res://script/LinkButton.gd" id="2_qae0b"]
+
+[node name="GameOver" type="ColorRect" unique_id=390180515]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9111461, 0.34047592, 0.20737252, 1)
+
+[node name="Label" type="Label" parent="." unique_id=823502581]
+layout_mode = 0
+offset_left = 219.0
+offset_top = 273.0
+offset_right = 940.0
+offset_bottom = 376.0
+theme_override_fonts/font = ExtResource("1_6bcno")
+theme_override_font_sizes/font_size = 120
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LinkButton" type="LinkButton" parent="." unique_id=1956250028]
+layout_mode = 0
+offset_left = 429.0
+offset_top = 443.0
+offset_right = 759.0
+offset_bottom = 471.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_6bcno")
+theme_override_font_sizes/font_size = 32
+text = "Back to main menu"
+script = ExtResource("2_qae0b")
+scene_to_load = "MainMenu"
+
+[connection signal="pressed" from="LinkButton" to="LinkButton" method="_on_back_pressed"]
