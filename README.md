@@ -32,3 +32,21 @@ Selanjutnya, diimplementasikan script tombol yang bersifat reusable menggunakan 
 Referensi yang digunakan dalam pengembangan ini antara lain dokumentasi resmi Godot Engine, khususnya bagian terkait nodes dan scene, autoload (singleton), serta sistem signal.
 
 </details>
+
+<details>
+<summary>Tutorial 8</summary>
+
+#### Opini terhadap updated movement system & partikel lari <br/>
+
+Menurut saya, updated movement system yang ditambahkan bersama dengan partikel saat karakter berlari itu cukup meningkatkan kualitas game secara keseluruhan. Pergerakan karakter terasa lebih responsif dan lebih “hidup” sehingga pemain bisa lebih menikmati kontrol yang diberikan. Partikel lari juga memberi feedback visual tambahan, yang membuat aksi berlari terasa lebih nyata, bukan sekadar perpindahan posisi saja.
+
+#### Balancing spawn rate
+
+Untuk spawn rate, saya menggunakan nilai 0.9 detik dengan implementasi:
+await get_tree().create_timer(0.9).timeout
+
+Nilai ini saya pilih karena menurut saya tidak terlalu cepat dan juga tidak terlalu lama. Jika terlalu cepat, pemain bisa merasa kewalahan dan game terasa tidak adil. Sebaliknya, jika terlalu lama, game jadi terasa membosankan karena kurang tekanan.
+
+Dengan nilai 0.9, ritmenya terasa seperti “jump scare ringan”, pemain tetap kaget dan harus siap, tetapi masih punya waktu untuk bereaksi. Jadi tingkat kesulitannya berada di tengah, tidak terlalu mudah namun juga tidak terlalu sulit sehingga game tetap menantang tapi masih nyaman untuk dimainkan.
+
+</details>
