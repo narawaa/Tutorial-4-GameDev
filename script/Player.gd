@@ -1,6 +1,11 @@
 extends CharacterBody2D
 
-@export var speed: int = 400
+const ACCELERATION = 400.0
+const DECELERATION = 400.0
+
+@onready var particle = $GPUParticles2D
+
+@export var speed: float = 400.0
 @export var gravity: int = 1200
 @export var jump_speed: int = -480
 @export var max_jumps: int = 2
@@ -13,14 +18,17 @@ func get_input():
 		velocity.y = jump_speed
 		jump_count += 1
 	if Input.is_action_pressed("right"):
-		velocity.x += speed
-	if Input.is_action_pressed("left"):
-		velocity.x -= speed
+		velocity.x = lerp(velocity.x, speed, ACCELERATION / speed)  ## naik perlahan (kanan)
+	elif Input.is_action_pressed("left"):
+		velocity.x = lerp(velocity.x, -speed, ACCELERATION / speed)  ## naik perlahan (kiri)
+	else:
+		velocity.x = lerp(velocity.x, 0.0, DECELERATION / speed)  ## turun perlahan
 
 
 func _physics_process(delta):
 	velocity.y += delta * gravity
 	get_input()
+	set_particles()
 	move_and_slide()
 	
 	if is_on_floor():
@@ -40,3 +48,9 @@ func _process(_delta):
 			$Sprite2D.flip_h = false
 		else:
 			$Sprite2D.flip_h = true
+
+func set_particles():
+	if abs(velocity.x) == speed and is_on_floor():
+		particle.set_emitting(true)
+	else:
+		particle.set_emitting(false)
